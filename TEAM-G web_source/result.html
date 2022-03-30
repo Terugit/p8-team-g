@@ -20,16 +20,37 @@
         </div>
         <section>
             <h2 class="section-title">結果</h2>
-            <p class="section-text1">
-                メタバースが話題になる昨今、インターネット上でやりとりをすることがますます加速している。<br>一方、オンライン上のやり取りの際には相手の感情がわかりにくいことがある。<br>
-                そこで我々は顔写真から被写体の感情を認識するアプリを開発した。
-            </p>
+            {% if emotion %}
+                <p class="result-text">
+                    これは<span class="emotion">{{emotion}}</span>の表情です
+                    <!--emotion　の後に 確率をつけたいなら　スパンタグの中を{{emotion}}（{{確率}}）　に変更する-->
+                </p>
+                {% if emotion == "幸せ" %}
+                    <img src="./images/emotion img/happy.png" alt="happy" class="emotion-image">
+                {% elif emotion == "怒り" %}
+                    <img src="./images/emotion img/angry.png" alt="angry" class="emotion-image">
+                {% elif emotion == "不快" %}
+                    <img src="./images/emotion img/disgusted.png" alt="disgusted" class="emotion-image">
+                {% elif emotion == "恐れ" %}
+                    <img src="./images/emotion img/fearful.png" alt="fearful" class="emotion-image">
+                {% elif emotion == "ニュートラル" %}
+                    <img src="./images/emotion img/neutral.png" alt="neutral" class="emotion-image">
+                {% elif emotion == "悲しみ" %}
+                    <img src="./images/emotion img/sad.png" alt="sad" class="emotion-image">
+                {% elif emotion == "驚き" %}
+                    <img src="./images/emotion img/surprised.png" alt="surprised" class="emotion-image">
+                {% endif %}
+                <a href="/" class="back-top">トップへ戻る</a>
+            {% else %}
+                <a href="/" class="back-top">トップへ戻る</a>
+            {% endif %}
         </section>
     </main>
     <footer>
         <h2 class="team">チームメンバー</h2>
         <ul>
-            <li class="member-list">廣田 玲央</li>
+            <li class="member-list">廣田 玲央(チームリーダー)</li>
+            <li class="member-list">白石 椋聖(メンター)</li>
             <li class="member-list">梶原 大誠</li>
             <li class="member-list">西野 輝希</li>
             <li class="member-list">本宮 颯馬</li>

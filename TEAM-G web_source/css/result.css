@@ -63,6 +63,38 @@ header {
     text-align: center;
 }
 
+/* 結果 */
+.result-text {
+    font-size: 45px;
+    text-align: center;
+    margin: 0px auto 20px;
+}
+
+.emotion {
+    font-size: 45px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #000066;
+    color: #000066;
+    margin: 20px auto;
+}
+
+.emotion-image {
+    max-width: 10%;
+    max-height: 15%;
+    text-align: center;
+}
+
+
+.back-top {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #000066;
+    color: #000066;
+    margin: 20px auto;
+}
+
 
 /* footer */
 
