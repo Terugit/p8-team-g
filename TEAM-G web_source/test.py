@@ -25,4 +25,3 @@ response = requests.post(
 json_dict = json.loads(response.text)
 pprint.pprint(json_dict['faces'][0]['attributes']['emotion'])
 
-pprint.pprint(type(json_dict['faces'][0]['attributes']['emotion']))

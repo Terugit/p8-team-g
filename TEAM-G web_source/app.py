@@ -34,9 +34,9 @@ def index_form():
 @app.route("/result", methods=["GET", "POST"])
 def request_form():
     if request.method == "POST":
-        file_path = os.path.abspath(request.files["img"].value)
-        with open(file_path, 'rb') as f:
-            img_file = base64.encodebytes(f.read())
+        file_path = request.files["img"]
+        
+        img_file = base64.encodebytes(file_path.read())
 
         #③「Face++」に対してリクエストを送る
         endpoint = 'https://api-us.faceplusplus.com'
