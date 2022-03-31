@@ -1,4 +1,22 @@
 from flask import Flask, request, render_template, url_for
+import joblib
+
+def  predict(parameters):
+    model = joblib.load('./nn.pkl')
+    params = parameters.reshape(1,-1)
+    pred = model.predict(params)
+    return pred
+
+def getName(label):
+    print(label)
+    if  label == 0:
+        return 'Iris Setosa'
+    elif label == 1:
+        return 'Iris Versicolor'
+    elif label == 2:
+        return 'Iris Virginica'
+    else:
+        return 'Error'
 
 app = Flask(__name__)
 
