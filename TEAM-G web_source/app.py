@@ -9,21 +9,21 @@ import os
 def getName(label):
     print(label)
     if  label == 'anger':
-        return '怒り'
+        return "怒り"
     elif label == 'disgust':
-        return '不快'
+        return "不快"
     elif label == 'fear':
-        return '恐怖'
+        return "恐怖"
     elif label == 'happiness':
-        return '幸せ'
+        return "幸せ"
     elif label == 'neutral':
-        return 'ニュートラル'
+        return "ニュートラル"
     elif label == 'sadness':
-        return '悲しみ'
+        return "悲しみ"
     elif label == 'surprise':
-        return '驚き'
+        return "驚き"
     else:
-        return 'Error'
+        return "Error"
 
 app = Flask(__name__)
 
@@ -52,8 +52,9 @@ def request_form():
 
         #④リクエストに対して返ってきた結果を出力する
         json_dict = json.loads(response.text)
-        dic = json_dict['faces'][0]['attributes']['emotion']
-        max_dict=max(dic)
+        pprint.pprint(json_dict['faces'][0]['attributes']['emotion'])
+
+        max_dict=max(json_dict['faces'][0]['attributes']['emotion'].items(), key = lambda x:x[1])[0]
         emotion_ = getName(max_dict)
 
         return render_template("result.html", emotion=emotion_)
