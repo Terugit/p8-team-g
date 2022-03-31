@@ -31,9 +31,9 @@
                 画像を選択して実行ボタンを押してください。<br>⚠︎ 集合写真や顔が認識しづらい写真は使えません。
             </p>
             <div>
-                <form method="post" enctype="multipart/form-data">
+                <form action={{ url_for("request_form")}} method="post" enctype="multipart/form-data">
                     <div class="send">
-                        <input type="file" name="image" id="image" accept="image/jpeg,image/jpg,image/png" required>
+                        <input type="file" name="img" id="image" accept=".jpeg,.jpg,.png" required>
                     </div>
                     <div class="send">
                         <input type="submit"  value="実行" class="button">

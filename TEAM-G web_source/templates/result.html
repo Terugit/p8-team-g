@@ -26,24 +26,46 @@
                     <!--emotion　の後に 予測確率をつけたいなら　スパンタグの中を{{emotion}}（{{確率}}）　に変更する-->
                 </p>
                 {% if emotion == "幸せ" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/happy.png")}} alt="happy" class="emotion-image">
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/happy.png")}} alt="happy">
+                    </div>
                 {% elif emotion == "怒り" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/angry.png")}} alt="angry" class="emotion-image">
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/angry.png")}} alt="angry">
+                    </div>
                 {% elif emotion == "不快" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/disgusted.png")}} alt="disgusted" class="emotion-image">
-                {% elif emotion == "恐れ" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/fearful.png")}} alt="fearful" class="emotion-image">
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/disgusted.png")}} alt="disgusted">
+                    </div>
+                {% elif emotion == "恐怖" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/fearful.png")}} alt="fearful">
+                    </div>
                 {% elif emotion == "ニュートラル" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/neutral.png")}} alt="neutral" class="emotion-image">
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/neutral.png")}} alt="neutral">
+                    </div>
                 {% elif emotion == "悲しみ" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/sad.png")}} alt="sad" class="emotion-image">
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/sad.png")}} alt="sad">
+                    </div>
                 {% elif emotion == "驚き" %}
-                    <img src={{ url_for("static", filename="images/emotion-img/surprised.png")}} alt="surprised" class="emotion-image">
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/surprised.png")}} alt="surprised">
+                    </div>
+                {% else %}
+                    <div class="back-top">
+                        <a href={{ url_for("index_form")}}>トップへ戻る</a>
+                    </div>
                 {% endif %}
-                <a href="/" class="back-top">トップへ戻る</a>
             {% else %}
-                <a href="/" class="back-top">トップへ戻る</a>
+                <div class="back-top">
+                    <a href={{ url_for("index_form")}}>トップへ戻る</a>
+                </div>
             {% endif %}
+            <div class="back-top">
+                <a href={{ url_for("index_form")}}>トップへ戻る</a>
+            </div>
         </section>
     </main>
     <footer>
