@@ -22,18 +22,18 @@
             <h2 class="section-title">はじめに</h2>
             <p class="section-text1">
                 メタバースが話題になる昨今、インターネット上でやりとりをすることがますます加速している。<br>一方、オンライン上のやり取りの際には相手の感情がわかりにくいことがある。<br>
-                そこで我々は顔写真から被写体の感情を認識するアプリを開発した。
+                そこで我々はFace++というAPIを利用して顔写真から被写体の感情を認識するアプリを開発した。
             </p>
         </section>
         <section class="bg-gray">
             <h2 class="section-title">認識してみましょう</h2>
             <p class="section-text1">
-                画像を選択して実行ボタンを押してください。<br>⚠︎ 集合写真や顔が認識しづらい写真は使えません。
+                画像を選択して実行ボタンを押してください。<br>⚠︎ 集合写真や顔が認識しづらい写真は使えません。jpegまたはjpg型式の画像ファイルを転送してください
             </p>
             <div>
                 <form action={{ url_for("request_form")}} method="post" enctype="multipart/form-data">
                     <div class="send">
-                        <input type="file" name="img" id="image" accept=".jpeg,.jpg,.png" required>
+                        <input type="file" name="img" id="image" accept=".jpeg,.jpg" required>
                     </div>
                     <div class="send">
                         <input type="submit"  value="実行" class="button">

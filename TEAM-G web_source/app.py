@@ -55,9 +55,10 @@ def request_form():
         pprint.pprint(json_dict['faces'][0]['attributes']['emotion'])
 
         max_dict=max(json_dict['faces'][0]['attributes']['emotion'].items(), key = lambda x:x[1])[0]
+        probability_ = json_dict['faces'][0]['attributes']['emotion'][max_dict]
         emotion_ = getName(max_dict)
 
-        return render_template("result.html", emotion=emotion_)
+        return render_template("result.html", emotion=emotion_, probability=probability_)
     else:
         return render_template("result.html", emotion=emotion_)
 
