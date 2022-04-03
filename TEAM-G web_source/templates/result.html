@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表情から感情分析アプリ</title>
+    <link rel=stylesheet href={{ url_for("static", filename="css/reset.css")}}>
+    <link rel=stylesheet href={{ url_for("static", filename="css/result.css")}}>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">PrimaryCourse8th Gチーム 開発発表</h1>
+    </header>
+    <main>
+        <div class="main-visual">
+            <p class="kv-copy">
+                表情から感情分析アプリ
+            </p>
+        </div>
+        <section>
+            <h2 class="section-title">結果</h2>
+            {% if emotion %}
+                <p class="result-text">
+                    これは<span class="emotion">{{emotion}}（精度{{probability}}%）</span>の表情です
+                    <!--emotion　の後に 予測確率をつけたいなら　スパンタグの中を{{emotion}}（{{確率}}）　に変更する-->
+                </p>
+                {% if emotion == "幸せ" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/happy.png")}} alt="happy">
+                    </div>
+                {% elif emotion == "怒り" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/angry.png")}} alt="angry">
+                    </div>
+                {% elif emotion == "不快" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/disgusted.png")}} alt="disgusted">
+                    </div>
+                {% elif emotion == "恐怖" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/fearful.png")}} alt="fearful">
+                    </div>
+                {% elif emotion == "ニュートラル" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/neutral.png")}} alt="neutral">
+                    </div>
+                {% elif emotion == "悲しみ" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/sad.png")}} alt="sad">
+                    </div>
+                {% elif emotion == "驚き" %}
+                    <div class="emotion-image">
+                        <img src={{ url_for("static", filename="images/emotion-img/surprised.png")}} alt="surprised">
+                    </div>
+                {% else %}
+                    <div class="back-top">
+                        <a href={{ url_for("index_form")}}>トップへ戻る</a>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="back-top">
+                    <a href={{ url_for("index_form")}}>トップへ戻る</a>
+                </div>
+            {% endif %}
+            <div class="back-top">
+                <a href={{ url_for("index_form")}}>トップへ戻る</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h2 class="team">チームメンバー</h2>
+        <ul>
+            <li class="member-list">廣田 玲央(チームリーダー)</li>
+            <li class="member-list">白石 椋聖(メンター)</li>
+            <li class="member-list">梶原 大誠</li>
+            <li class="member-list">西野 輝希</li>
+            <li class="member-list">本宮 颯馬</li>
+            <li class="member-list">及川 大輔</li>
+        </ul>
+    </footer>
+</body>
+</html>
